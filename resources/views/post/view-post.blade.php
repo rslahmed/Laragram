@@ -13,16 +13,16 @@
                         <img style="height: 70px; object-fit: cover" class="w-100 rounded-circle" src="{{asset($post->profile->image)}}" alt="">
                     </div>
                     <div class="col-md-8">
-                        <h5>{{$post->profile->user->name}}</h5>
+                        <a href="{{url('/profile/view/'.$post->profile->id)}}"><h5>{{$post->profile->user->name}}</h5></a>
                         <p>{{$post->desc}}</p>
 
                         <div class="post-footer mt-5">
-                            <a class="ml-2 d-inline-block" style="font-size: 20px" href="#"><i class="far fa-heart"></i></a>
+                            <a class="ml-2 d-inline-block" style="font-size: 20px" href="{{url('/like/'.$post->id)}}"><i class="far fa-heart"></i></a>
                             <a class="ml-2 d-inline-block" style="font-size: 20px" href="#"><i class="far fa-comments"></i></a>
                             <a class="ml-2 d-inline-block" style="font-size: 20px" href="#"><i class="fab fa-telegram-plane"></i></a>
                         </div>
                         <div class="post-desc pt-2">
-                            <p class="mb-0"><small>1 Like</small></p>
+                            <p class="mb-0"><small>{{$heart->count()}} Like</small></p>
                             <p><small>20 dec 2020</small></p>
                         </div>
                         <div class="post-comment">

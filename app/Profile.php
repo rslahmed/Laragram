@@ -15,4 +15,5 @@ class Profile extends Model
     function post(){
         return $this->hasMany(Post::class);
     }
+
 }

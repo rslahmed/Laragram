@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Heart;
 use App\Post;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -51,6 +53,16 @@ class PostController extends Controller
     function view($id){
 
         $post = Post::findOrFail($id);
-        return view('post/view-post', compact('post'));
+        $heart = Heart::where('post_id', $id)->get();
+        return view('post/view-post', compact('post', 'heart'));
+
+
+    }
+
+    function index(){
+        $users = auth()->user()->follows()->pluck('follow_id');
+        $posts = Post::whereIn('profile_id', $users)->latest()->get();
+        $recentUser = User::orderBy('created_at', 'DESC')->whereNotIn('id', array(Auth::id()))->limit(4)->get();
+        return view('post.post-index', compact('posts', 'recentUser', 'heart'));
     }
 }

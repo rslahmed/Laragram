@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PostController@index')->name('home');
 
 // profile route
 Route::get('/profile/view/{id}', 'ProfileController@index');
@@ -29,3 +29,16 @@ Route::post('/profile/update', 'ProfileController@update')->middleware('auth');
 Route::get('/post/add', 'PostController@create')->middleware('auth');
 Route::post('/post/store', 'PostController@store')->middleware('auth');
 Route::get('/post/view/{id}', 'PostController@view');
+
+//follow
+
+Route::get('/follow/{user}', 'FollowerController@follow')->middleware('auth');
+Route::get('/unfollow/{user}', 'FollowerController@unfollow')->middleware('auth');
+
+//heart
+Route::get('/like/{post}', 'HeartController@like')->middleware('auth');
+
+//auth middleware
+Route::group(['middleware' => ['auth']], function () {
+
+});

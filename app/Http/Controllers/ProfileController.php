@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Follower;
 use App\Post;
 use App\Profile;
 use App\User;
@@ -13,8 +14,10 @@ class ProfileController extends Controller
     function index($id){
         $profile = Profile::findOrFail($id);
         $posts = Post::where('profile_id', $id )->get();
-        $auth = Auth::id();
-        return view('profile.view-profile', compact('profile', 'posts', 'auth'));
+        $followers = Follower::where('follow_id',$id)->get();
+//        dd($followers);
+
+        return view('profile.view-profile', compact('profile', 'posts', 'followers'));
     }
 
     function edit(){

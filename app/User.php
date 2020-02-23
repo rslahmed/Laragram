@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -23,6 +24,8 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
+
+
     protected static function boot()
     {
         parent::boot();
@@ -31,6 +34,28 @@ class User extends Authenticatable
                 'bio' => 'Description',
             ]);
         });
+    }
+
+//    followers
+    public function follows() {
+        return $this->hasMany(Follower::class);
+    }
+
+    // is following
+    public function isFollowing($target_id)
+    {
+        return (bool)$this->follows()->where('follow_id', $target_id)->first(['id']);
+    }
+
+    //heart
+    function heart(){
+        $this->hasMany('Heart', 'user_id', 'id');
+    }
+
+    // is liked
+    function isLIked($post){
+//        Heart::where('post_id', $id)->first();
+        return (bool)Heart::where('post_id', $post)->where('user_id', Auth::id())->first();
     }
 
     /**

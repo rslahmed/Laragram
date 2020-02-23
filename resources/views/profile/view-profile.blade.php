@@ -9,22 +9,26 @@
             </div>
             <div class="com-md-6 pt-4">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2>{{$profile->user->username}}</h2>
-                    @if($profile->id == $auth)
+                   <h2 class="mr-5">{{$profile->user->username}}</h2>
+                    @if($profile->id == \Illuminate\Support\Facades\Auth::id())
                     <a class="btn btn-sm btn-secondary" href="/profile/edit" >Edit Profile</a>
                         @else
-                        <a class="btn btn-sm btn-secondary" href="/profile/edit" >Follow</a>
+                        @if (Auth::User()->isFollowing($profile->user->id))
+                            <a class="btn btn-sm btn-secondary" href="{{url('/unfollow/'.$profile->user->id)}}" >Unfollow</a>
+                        @else
+                            <a class="btn btn-sm btn-secondary" href="{{url('/follow/'.$profile->user->id)}}" >Follow</a>
+                        @endif
                     @endif
                 </div>
                 <div class="d-flex">
                     <p class="mr-3">{{count($posts)}} post</p>
-                    <p class="mr-3">12 follower</p>
-                    <p class="mr-3">51 following</p>
+                    <p class="mr-3">{{ $followers->count()}} follower</p>
+                    <p class="mr-3">{{ $profile->user->follows->count()}} following</p>
                 </div>
 
                 <h6 class="mt-4 font-weight-bold">{{$profile->user->name}}</h6>
                 <h6 class="mt-1">{{$profile->bio}}</h6>
-                @if($profile->id == $auth)
+                @if($profile->id == \Illuminate\Support\Facades\Auth::id())
                     <a class="" href="/post/add" >Add Post+</a>
                 @endif
             </div>
