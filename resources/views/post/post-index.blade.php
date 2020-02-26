@@ -8,7 +8,7 @@
                 @foreach($posts as $post)
                     <div class="row mb-4">
                         <div class="col-md-12">
-                            <img style="max-height: 500px; object-fit: cover" class="w-100 img-thumbnail" src="{{asset($post->image)}}" alt="">
+                            <a href="{{ url('post/view/'.$post->id) }}"><img style="max-height: 500px; object-fit: cover" class="w-100 img-thumbnail" src="{{asset($post->image)}}" alt=""></a>
                             <div class="row mt-3">
                                 <div class="col-md-2">
                                     <img style="height: 65px; object-fit: cover" class="w-100 rounded-circle" src="{{asset($post->profile->image)}}" alt="">
@@ -18,17 +18,24 @@
                                     <p>{{$post->desc}}</p>
 
                                     <div class="post-footer mt-1">
-                                        <a class="ml-2 d-inline-block"><i class="far fa-heart"></i></a>
+                                        <a class="ml-2 d-inline-block @if(auth()->user()->isLIked($post->id)) text-danger @endif" style="font-size: 20px" href="{{url('/like/'.$post->id)}}"><i class="far fa-heart"></i></a>
                                         <a class="ml-2 d-inline-block" style="font-size: 20px" href="#"><i class="far fa-comments"></i></a>
                                         <a class="ml-2 d-inline-block" style="font-size: 20px" href="#"><i class="fab fa-telegram-plane"></i></a>
                                     </div>
                                     <div class="post-desc pt-2">
-                                        <p class="mb-0"><small>{{ \App\Heart::where('post_id', $post->id)->get()->count() }} Like</small></p>
-                                        <p><small>20 dec 2020</small></p>
+                                        <p class="mb-0"><small>{{ $post->heart->count() }} Like</small></p>
+                                        <p class="mb-0"><small>{{$post->comment->count()}} comment</small></p>
+                                        <p style="font-size: 10px; line-height: 1; margin-top: 5px; margin-bottom: 10px; color: #666">20 dec 2020</p>
                                     </div>
                                     <div class="post-comment">
-                                        <form action="#">
-                                            <input class="form-control" type="text" placeholder="comment">
+                                        <form action="{{url('/comment/'.$post->id)}}" method="post">
+                                            @csrf
+                                            <div class="input-group">
+                                                <input name="comment" type="text" class="form-control" placeholder="Type Your comment">
+                                                <div class="input-group-append" id="button-addon4">
+                                                    <button class="btn btn-outline-secondary" type="submit">Comment</button>
+                                                </div>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -49,7 +56,7 @@
                                 @foreach($recentUser as $ruser)
                                     <div class="row mb-2 align-items-center justify-content-center">
                                         <div class="col-md-3">
-                                            <img style="width: 100%; height: 60px; border-radius: 50%;" src="{{asset($ruser->profile->image ?? asset('uploads/profile/default.png'))}}" alt="user">
+                                            <img style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover" src="{{asset($ruser->profile->image ?? asset('uploads/profile/default.png'))}}" alt="user">
                                         </div>
                                         <div class="col-md-5">
                                             <a href="{{url('profile/view/'.$ruser->id)}}"><h5>{{ $ruser->name }}</h5></a>

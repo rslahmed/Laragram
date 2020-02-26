@@ -10884,3 +10884,12 @@ a.text-dark:focus {
   }
 }
 
+/*custom*/
+#editProfile:before{
+    display: none;
+}
+
+#editProfile{
+    background-color: transparent;
+    border: none;
+}

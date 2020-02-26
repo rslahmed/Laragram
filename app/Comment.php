@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Heart extends Model
+class Comment extends Model
 {
-    protected $fillable = ['user_id', 'post_id'];
+    protected $fillable = ['user_id', 'post_id', 'comment'];
 
     function post(){
         return $this->belongsTo(Post::class);

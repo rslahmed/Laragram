@@ -59,7 +59,7 @@
                                 {{ Auth::user()->username }} <span class="caret"></span>
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu-right" style="z-index: 9999" aria-labelledby="navbarDropdown">
                                 <a href="{{url('/profile/view/'.\Illuminate\Support\Facades\Auth::id())}}" class="dropdown-item">Profile</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
@@ -88,7 +88,7 @@
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
-<script src="{{'js/custom.js'}}"></script>
+<script src="{{asset('js/custom.js')}}"></script>
 <script>
     // toastr js option
     toastr.options = {

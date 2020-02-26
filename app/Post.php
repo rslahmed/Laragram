@@ -14,7 +14,11 @@ class Post extends Model
     }
 
     function heart(){
-        $this->hasMany(Heart::class, 'post_id', 'id');
+        return $this->hasMany(Heart::class, 'post_id', 'id');
+    }
+
+    function comment(){
+        return $this->hasMany(Comment::class, 'post_id', 'id');
     }
 
 

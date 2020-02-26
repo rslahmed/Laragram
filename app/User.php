@@ -49,13 +49,18 @@ class User extends Authenticatable
 
     //heart
     function heart(){
-        $this->hasMany('Heart', 'user_id', 'id');
+        return $this->hasMany('Heart', 'user_id', 'id');
     }
 
     // is liked
     function isLIked($post){
 //        Heart::where('post_id', $id)->first();
         return (bool)Heart::where('post_id', $post)->where('user_id', Auth::id())->first();
+    }
+
+    //comment
+    function comment(){
+        return $this->hasMany('comments', 'user_id', 'id');
     }
 
     /**
