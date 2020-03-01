@@ -28,6 +28,8 @@ Route::group(['middleware' => ['auth']], function () {
     // profile route
     Route::get('/profile/edit', 'ProfileController@edit');
     Route::post('/profile/update', 'ProfileController@update');
+    Route::get('/password/change', 'ProfileController@editPassword');
+    Route::post('/password/update', 'ProfileController@updatePassword');
     //post route
     Route::get('/post/add', 'PostController@create');
     Route::post('/post/store', 'PostController@store');

@@ -2,29 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84cb4e37-48bb-41b6-b4bd-236a4a386209" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Comment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_25_151730_create_comments_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/post/1582662979.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/post/1582663037.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/post/1582663052.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/post/1582664858.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/post/1582666074.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/post/1582751113.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/post/1582751175.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/profile/1582662836.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/post/edit-post.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/post/1582924186.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/post/1582924255.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/profile/change-password.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Heart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Heart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/post/1582054974.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/post-index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/post-index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/view-post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/view-post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/edit-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/edit-profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -199,8 +183,19 @@
       <workItem from="1582722670394" duration="610000" />
       <workItem from="1582738196599" duration="24000" />
       <workItem from="1582742293764" duration="1645000" />
-      <workItem from="1582750996168" duration="535000" />
+      <workItem from="1582750996168" duration="841000" />
+      <workItem from="1582794027398" duration="31000" />
+      <workItem from="1582923907273" duration="2457000" />
+      <workItem from="1583054923419" duration="598000" />
     </task>
+    <task id="LOCAL-00001" summary="letest">
+      <created>1582751594083</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582751594083</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,5 +219,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="letest" />
+    <option name="LAST_COMMIT_MESSAGE" value="letest" />
   </component>
 </project>

@@ -6,7 +6,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Edit Profile</div>
+                    <div class="card-header d-flex align-items-baseline justify-content-between">
+                        <h6 class="mb-0">Edit Profile</h6>
+                        <a href="{{url('password/change')}}">Change password</a>
+                    </div>
 
                     <div class="card-body">
                         <form method="POST" action="{{url('profile/update')}}" enctype="multipart/form-data">

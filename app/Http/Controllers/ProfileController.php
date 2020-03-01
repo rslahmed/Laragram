@@ -8,6 +8,7 @@ use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -72,6 +73,43 @@ class ProfileController extends Controller
             );
         }
         return redirect('/profile/view/'.$userId)->with($notification);
+    }
+
+    function editPassword(){
+        return view('profile/change-password');
+    }
+
+    function updatePassword(Request $request){
+        $request->validate([
+            'oldPassword' => ['required', 'string'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        if (Hash::check($request->oldPassword, Auth::user()->getAuthPassword())){
+            $update = User::where('id', Auth::id())->update([
+               'password' => Hash::make($request->password)
+            ]);
+            if ($update){
+                $notification = array(
+                    'message' => 'Password changed!',
+                    'status' => 'success',
+                );
+            }
+            else{
+                $notification = array(
+                    'message' => 'Something went wrong, please try again',
+                    'status' => 'warning',
+                );
+            }
+            return redirect('/profile/view/'.Auth::id())->with($notification);
+        }
+        else{
+            $notification = array(
+                'message' => 'Password not match',
+                'status' => 'warning',
+            );
+        }
+        return back()->with($notification);
     }
 
 }

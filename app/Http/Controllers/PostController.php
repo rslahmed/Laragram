@@ -69,8 +69,20 @@ class PostController extends Controller
     function delete($id){
         $post = Post::where('id', $id)->first();
         $profile = $post->profile->id;
-        $post->delete();
-        return redirect('profile/view/'.$profile);
+        $delete = $post->delete();
+        if ($delete){
+            $notification = array(
+                'message' => 'Delete successful',
+                'status' => 'success',
+            );
+        }
+        else{
+            $notification = array(
+                'message' => 'Delete failed',
+                'status' => 'warning',
+            );
+        }
+        return redirect('profile/view/'.$profile)->with($notification);
     }
 
     function edit($id){
