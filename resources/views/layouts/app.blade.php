@@ -28,11 +28,6 @@
             <a class="navbar-brand" href="{{ url('/home') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
@@ -53,6 +48,17 @@
                             </li>
                         @endif
                     @else
+                        <li class="nav-item mr-3">
+                            <form action="{{url('search/user')}}" method="post">
+                                @csrf
+                                <div class="input-group mb-3">
+                                    <input type="text" name="username" class="form-control" placeholder="Search username">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-outline-secondary">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

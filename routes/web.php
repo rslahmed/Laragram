@@ -14,17 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 //auth
-Auth::routes();
+Auth::routes(['verify' => true]);
 //home
-Route::get('/home', 'PostController@index')->name('home');
+
 // profile route
 Route::get('/profile/view/{id}', 'ProfileController@index');
 //post route
 Route::get('/post/view/{id}', 'PostController@view');
 
 //auth middleware
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
+    // home
+    Route::get('/home', 'PostController@index');
     // profile route
     Route::get('/profile/edit', 'ProfileController@edit');
     Route::post('/profile/update', 'ProfileController@update');
@@ -38,9 +41,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/post/delete/{id}', 'PostController@delete');
     //follow
     Route::get('/follow/{user}', 'FollowerController@follow');
-    Route::get('/unfollow/{user}', 'FollowerController@unfollow');
     //heart
     Route::get('/like/{post}', 'HeartController@like');
     //comment
     Route::post('/comment/{post}', 'CommentController@comment');
+//    search
+    Route::post('/search/user', 'HomeController@search');
 });

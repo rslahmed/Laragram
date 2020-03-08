@@ -18,31 +18,13 @@ class FollowerController extends Controller
                 'follow_id' => $user->id,
             ]);
 
-            return back()->with('success', 'You are now friends with '. $user->name);
-        } else {
-            return back()->with('error', 'You are already following this person');
-        }
-
-    }
-
-    public function unfollow(User $user)
-    {
-        if (Auth::user()->isFollowing($user->id)) {
+            return back()->with('success', 'You are now following '. $user->name);
+        } elseif(Auth::user()->isFollowing($user->id)){
             $follow = Auth::user()->follows()->where('follow_id', $user->id)->first();
             $follow->delete();
 
-            $notification = array([
-                'message' => 'You are no longer friends with '. $user->name,
-                'status' => 'success'
-            ]);
-
-            return back()->with($notification);
-        } else {
-            $notification = array([
-                'message' => 'You are not following '. $user->name,
-                'status' => 'error'
-            ]);
-            return back()->with($notification);
+            return back()->with('success', 'You have unfollow '. $user->name);
         }
+
     }
 }

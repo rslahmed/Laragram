@@ -13,11 +13,13 @@
                     @if($profile->id == \Illuminate\Support\Facades\Auth::id())
                     <a class="btn btn-sm btn-secondary" href="/profile/edit" >Edit Profile</a>
                         @else
+                        <a class="btn btn-sm btn-secondary" href="{{url('/follow/'.$profile->user->id)}}" >
                         @if (Auth::User()->isFollowing($profile->user->id))
-                            <a class="btn btn-sm btn-secondary" href="{{url('/unfollow/'.$profile->user->id)}}" >Unfollow</a>
+                            Unfollow
                         @else
-                            <a class="btn btn-sm btn-secondary" href="{{url('/follow/'.$profile->user->id)}}" >Follow</a>
+                                Follow
                         @endif
+                        </a>
                     @endif
                 </div>
                 <div class="d-flex">

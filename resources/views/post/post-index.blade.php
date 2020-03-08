@@ -5,13 +5,14 @@
     <div class="container pt-2" >
         <div class="row justify-content-center">
             <div class="col-md-6">
+                @if ($posts->count() > 0)
                 @foreach($posts as $post)
                     <div class="row mb-4">
                         <div class="col-md-12">
                             <a href="{{ url('post/view/'.$post->id) }}"><img style="max-height: 500px; object-fit: cover" class="w-100 img-thumbnail" src="{{asset($post->image)}}" alt=""></a>
                             <div class="row mt-3">
                                 <div class="col-md-2">
-                                    <img style="height: 65px; object-fit: cover" class="w-100 rounded-circle" src="{{asset($post->profile->image)}}" alt="">
+                                    <img style="height: 65px; object-fit: cover" class="w-100 rounded-circle" src="{{asset($post->profile->image ?? '/uploads/profile/default.png')}}" alt="">
                                 </div>
                                 <div class="col-md-8">
                                     <a href="{{url('/profile/view/'.$post->profile->user->id)}}"><h5>{{$post->profile->user->name}}</h5></a>
@@ -43,6 +44,23 @@
                         </div>
                     </div>
                 @endforeach
+
+                @else
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>You don't follow anyone yet</h3>
+                                <form action="{{url('search/user')}}" method="post">
+                                    @csrf
+                                    <div class="input-group mb-3">
+                                        <input type="text" name="username" class="form-control" placeholder="Search username">
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-outline-secondary">Search</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    @endif
             </div>
             <div class="col-md-4">
                 <div class="row sticky-top">
@@ -63,7 +81,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             @if (Auth::User()->isFollowing($ruser->id))
-                                                <a class="btn btn-sm btn-secondary" href="{{url('/unfollow/'.$ruser->id)}}" >Unfollow</a>
+                                                <a class="btn btn-sm btn-secondary" href="{{url('/follow/'.$ruser->id)}}" >Unfollow</a>
                                             @else
                                                 <a class="btn btn-primary" href="{{url('/follow/'.$ruser->id)}}" >Follow</a>
                                             @endif
