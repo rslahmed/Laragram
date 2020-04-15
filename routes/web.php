@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 //auth
-Auth::routes(['verify' => true]);
+Auth::routes();
 //home
 
 // profile route
@@ -25,7 +25,7 @@ Route::get('/profile/view/{id}', 'ProfileController@index');
 Route::get('/post/view/{id}', 'PostController@view');
 
 //auth middleware
-Route::group(['middleware' => ['auth', 'verified']], function () {
+Route::group(['middleware' => 'auth'], function () {
     // home
     Route::get('/home', 'PostController@index');
     // profile route

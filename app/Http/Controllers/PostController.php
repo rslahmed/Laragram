@@ -63,7 +63,7 @@ class PostController extends Controller
         $users = auth()->user()->follows()->pluck('follow_id');
         $posts = Post::whereIn('profile_id', $users)->latest()->get();
         $recentUser = User::orderBy('created_at', 'DESC')->whereNotIn('id', array(Auth::id()))->limit(4)->get();
-        return view('post.post-index', compact('posts', 'recentUser', 'heart'));
+        return view('post.post-index', compact('posts', 'recentUser'));
     }
 
     function delete($id){
