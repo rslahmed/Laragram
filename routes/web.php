@@ -20,6 +20,9 @@ Auth::routes();
 //home
 
 // profile route
+//Route::get('/skipverify', function (){
+//    return redirect('/home');
+//})->name('verification.verify');
 Route::get('/profile/view/{id}', 'ProfileController@index');
 //post route
 Route::get('/post/view/{id}', 'PostController@view');

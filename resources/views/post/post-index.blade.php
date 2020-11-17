@@ -48,7 +48,7 @@
                 @else
                         <div class="row">
                             <div class="col-md-12">
-                                <h3>You don't follow anyone yet</h3>
+                                <h3>Nothing to show yet</h3>
                                 <form action="{{url('search/user')}}" method="post">
                                     @csrf
                                     <div class="input-group mb-3">
