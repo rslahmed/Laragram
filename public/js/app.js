@@ -37313,7 +37313,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "row justify-content-center" }, [
         _c("div", { staticClass: "col-md-8" }, [
           _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
+            _c("div", { staticClass: "card-header mt-2" }, [
               _vm._v("Example Component")
             ]),
             _vm._v(" "),
@@ -49661,8 +49661,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\laragram\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\laragram\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! G:\laragon\www\Laragram\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! G:\laragon\www\Laragram\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

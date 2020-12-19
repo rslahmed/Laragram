@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84cb4e37-48bb-41b6-b4bd-236a4a386209" name="Default Changelist" comment="laragram v-1.1">
-      <change beforePath="$PROJECT_DIR$/.idea/laragram.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laragram.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="84cb4e37-48bb-41b6-b4bd-236a4a386209" name="Default Changelist" comment="Fix some bugs -v 1.2">
+      <change afterPath="$PROJECT_DIR$/public/resources/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/post-index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/post-index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +138,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../userManagement" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -195,7 +195,9 @@
       <workItem from="1600364646334" duration="446000" />
       <workItem from="1600415437041" duration="110000" />
       <workItem from="1600490530805" duration="69000" />
-      <workItem from="1605630743133" duration="1932000" />
+      <workItem from="1605630743133" duration="2274000" />
+      <workItem from="1608227915836" duration="541000" />
+      <workItem from="1608268565828" duration="2753000" />
     </task>
     <task id="LOCAL-00001" summary="letest">
       <created>1582751594083</created>
@@ -246,7 +248,21 @@
       <option name="project" value="LOCAL" />
       <updated>1587053084946</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fix some bugs -v 1.2">
+      <created>1605632848797</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1605632848797</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix some bugs -v 1.2">
+      <created>1605632906686</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1605632906686</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,24 +290,30 @@
     <MESSAGE value="letest" />
     <MESSAGE value="laragram v-1.0" />
     <MESSAGE value="laragram v-1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="laragram v-1.1" />
+    <MESSAGE value="Fix some bugs -v 1.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix some bugs -v 1.2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="393" y="5" key="CommitChangelistDialog2" timestamp="1605632846219">
+    <state x="393" y="5" key="CommitChangelistDialog2" timestamp="1608268732543">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="5" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1605632846219" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605632857137">
+    <state x="393" y="5" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1608268732543" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605633025744">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1605632857137" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1605633025744" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605632914816">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1605632914816" />
     <state x="463" y="144" width="609" height="536" key="find.popup" timestamp="1605631299543">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="463" y="144" width="609" height="536" key="find.popup/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1605631299543" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605632414234">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1608270414661">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1605632414234" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1608270414661" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1608227969869" />
   </component>
 </project>
